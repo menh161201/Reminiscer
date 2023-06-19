@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/style.css'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AuthProvider } from "./components/contexts/AuthContext";
+import Homepage from './components/Homepage';
+import SignUp from './components/SignUp/SignUp';
+import LogIn from './components/LogIn/LogIn';
+import ProtectedRoutes from './ProtectedRoute';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter basename=''>
+        <AuthProvider>
+          <Routes>
+            <Route exact path='/' element={<Homepage/>}/>
+            <Route exact path='/signup' element={<SignUp/>}/>
+            <Route exact path='/login' element={<LogIn/>}/>
+            <Route element={<ProtectedRoutes/>}>
+              <Route path='/dashboard' element={<Dashboard/>}/>
+            </Route>
+          </Routes>
+        </AuthProvider>
+      </BrowserRouter>
     </div>
   );
 }

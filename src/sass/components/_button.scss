@@ -1,0 +1,31 @@
+.btn  {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: $color-black;
+    border: 1px solid $color-white;
+    width: max-content;
+    box-shadow: -.30rem .30rem 0rem $color-white;
+    transition: $transition-fast;
+    color: $color-white;
+    cursor: pointer;
+
+    &:hover  {
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: -.20rem .20rem 0rem $color-white;
+    }
+
+    &-long {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.link {
+    text-decoration: none;
+    color: $color-white;
+}
+

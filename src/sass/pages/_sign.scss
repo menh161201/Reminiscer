@@ -1,0 +1,116 @@
+.sign-container {
+    background: $color-black;
+    border: 1px solid $color-white;
+    width: 90vw;
+    max-width: 500px;
+    padding: 6rem 0;
+    margin-top: 4rem;
+    .sign-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        
+        .sign-up-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            width: 70%;
+
+            .or {   
+                position: relative;
+                text-align: center;
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 45%;
+                    height: 1px;
+                    background: $color-white;
+                    top: 50%;
+                    left: 0;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 45%;
+                    height: 1px;
+                    background: $color-white;
+                    top: 50%;
+                    right: 0;
+                }
+
+                h2 {
+                    font-weight: 100;
+                    
+                }
+                
+            }
+
+            &-group {
+                display: flex;
+                flex-direction: column;
+
+                .input-group {
+                    padding: 1.5rem 0;
+                    background: $color-black;
+                    color: $color-white;
+                    display: flex;
+                    flex-direction: column;
+
+                    span {
+                        width: max-content;
+                        margin-bottom: 1rem;
+                        font-size: 1.3rem;
+                       
+                    }
+
+                    input:not(:last-child) {
+                        margin-bottom: 2rem;
+                        margin-top: 1rem;
+                    }
+    
+                    input {
+                        padding: 1.5rem 2rem;
+                        background: $color-black;
+                        border: 1px solid $color-white;
+                        color: $color-white;
+                        transition: $transition-fast;
+                        &::placeholder {
+                            color: grey;
+                        }
+    
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &:focus:invalid {
+                            border-color:orangered;
+                        }
+
+                        &:focus:valid {
+                            border-color: lightgreen;
+                        }
+    
+                    }
+
+                }
+                
+            }
+        }
+    }
+}
+
+.log-in {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+
+    .to-log-in {
+        text-decoration: none;
+        color: $color-white;
+        font-weight: 1000;
+    }
+}
+

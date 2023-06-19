@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
+.logo {
+    width: 32rem;
+}
+
+.heading-primary {
+    font-size: 3rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    font-weight: 300;
+    .mem,
+    .connect,
+    .joy {
+        font-size: 6rem;
+    }
+
+    .mem {
+        background: $color-white;
+        color: $color-white;
+        padding: 0 1rem;
+        background-image: linear-gradient(105deg, $color-black 0%, $color-black 50%, $color-white 50%);
+        background-size: 220%;
+        transition: $transition-slow;
+        font-weight: 900;
+        &:hover {
+            background-position: 95%;
+            color: $color-black;
+        }
+    }
+
+    .joy {
+        // border: 1px solid $color-white;
+        font-weight: 900;
+        transition: $transition-slow;
+
+        &-1 {
+            padding: 0 1rem;
+        }
+
+        &-2  {
+            padding: 0 1rem;
+            color: $color-black;
+            background: $color-white;
+        }
+        
+        &:hover{
+            // background: $color-white;
+            color: $color-black;
+            background: $color-white;
+        }
+    }
+
+}
+
+.mem,
+.joy {
+    font-size: 6rem;
+}
+
+.footer-paragraph {
+    font-size: 1.9rem;
+    font-weight: 100;
+    line-height: 2.5;
+    text-align: justify;
+}
+
+.heading-tertiary {
+    font-size: 5rem;
+}
