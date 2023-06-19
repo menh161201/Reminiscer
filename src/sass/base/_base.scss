@@ -9,10 +9,30 @@
     box-sizing: inherit;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 html {
     box-sizing: border-box;
     font-size: 62.5%;
     cursor:default;
+
+    @include respond(large-laptop) {
+        font-size: 55%;
+    }
+
+    @include respond(tablet) {
+        font-size: 48%;
+    }
+
+    @include respond(med-tablet) {
+        font-size: 43%;
+    }
+
+    @include respond(small-tablet) {
+        font-size: 40%;
+    }
 }
 
 body {

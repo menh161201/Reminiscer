@@ -4,7 +4,7 @@
     max-width: 1350px;
     min-height: max-content;
     height: 90vh;
-
+    position: relative;
     .header {
         padding-bottom: 2rem;
         display: flex;
@@ -20,6 +20,17 @@
         grid-template: repeat(6, 4.2vw)/ repeat(13, 1fr);
         grid-gap: 1rem;
 
+        @include respond(large-laptop)  {
+            grid-template: repeat(6, 6vw)/ repeat(13, 1fr);
+        }
+
+        @include respond(tablet)  {
+            grid-template: repeat(6, 8.5vw)/ repeat(13, 1fr);
+        }
+
+        @include respond(med-tablet)  {
+            grid-template: repeat(6, 10vw)/ repeat(13, 1fr);
+        }
         &:hover .main-item:not(:hover) {
             transform: scale(.9);
         }
@@ -33,6 +44,30 @@
             justify-content: center;
             overflow: hidden;
             animation: moveIn 3s ease;
+            
+            &:not(:nth-child(7))  {
+                img {
+                    @include respond(large-laptop)  {
+                        width: 150% !important;
+                    }
+
+                    @include respond(tablet)  {
+                        width: 200% !important;
+                    }
+
+                    @include respond(med-tablet)  {
+                        width: 235% !important;
+                    }
+
+                    @include respond(small-tablet)  {
+                        width: 240% !important;
+                    }
+
+                    @include respond(phone)  {
+                        width: 260% !important;
+                    }
+                }
+            }
 
             &:hover {
                 transform: scale(1.05) rotate(3deg);
@@ -88,7 +123,13 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-            
+
+                img {
+                    @include respond(small-tablet)  {
+                        width: 90%;
+                    }
+                }
+                
             }
 
             &-8 {
@@ -131,22 +172,53 @@
 
     .footer {
         animation: moveIn 5s ease;
+        // position: absolute;
+        // bottom: 0;
+        // width: 100%;
+
         &-card {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 60% 40%;
             padding: 4rem 0;
-
+            @include respond(small-tablet) {
+                grid-template-columns: none;
+                grid-template-rows: 1fr 1fr;
+                // grid-gap: 30rem;
+            }
             &-right {
                 position: relative;
+                // background: red;
+
+                @include respond(small-tablet) {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 2rem;
+                }
+
+                @include respond(phone) {
+                    
+                    margin-top: 1rem;
+                }
 
                 &-content {
-                    width: 65%;
+                    width: 95%;
                     display: flex;
                     flex-direction: column;
-                    gap: 4rem;
+                    gap: 2rem;
                     position: absolute;
                     right: 0;
                     bottom: .75rem;
+
+                    @include respond(small-tablet) {
+                        position: relative;
+                        width: 40%;
+                    }
+
+                    @include respond(phone) {
+                    
+                        width: 80%;
+                    }
                 }
             }
         }

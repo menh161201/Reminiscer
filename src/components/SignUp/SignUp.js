@@ -4,6 +4,7 @@ import { auth } from "../Firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useAuth } from '../contexts/AuthContext';
 import Logo from  '../../img/Logo.svg';
+import Google from '../../img/logo-google.png';
 
 export default function SignUp() {
 
@@ -91,10 +92,11 @@ export default function SignUp() {
                         <h2>or</h2>
                     </div>
                     <div className="btn btn-long" onClick={signInWithGoogle}>
-                        {/* <div className="google-logo">
-                            <img src={Logo} alt="" />
-                        </div> */}
-                        <span>Sign up with Google</span>
+                        <div className="google-logo">
+                            <img src={Google} alt="" />
+                            <span>Sign up with Google</span>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

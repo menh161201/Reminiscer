@@ -11,10 +11,24 @@
     flex-direction: column;
     line-height: 1.6;
     font-weight: 300;
+
+    @include  respond(small-tablet) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 3rem;
+    }
     .mem,
     .connect,
     .joy {
         font-size: 6rem;
+        @include  respond(small-tablet) {
+            font-size: 5rem;
+        }
+
+        @include  respond(phone) {
+            font-size: 4rem;
+        }
     }
 
     .mem {
@@ -29,6 +43,10 @@
             background-position: 95%;
             color: $color-black;
         }
+
+        @include  respond(small-tablet) {
+            margin: 0 1rem;
+        }    
     }
 
     .joy {
@@ -61,7 +79,7 @@
 }
 
 .footer-paragraph {
-    font-size: 1.9rem;
+    font-size: 2rem;
     font-weight: 100;
     line-height: 2.5;
     text-align: justify;
@@ -69,4 +87,15 @@
 
 .heading-tertiary {
     font-size: 5rem;
+}
+
+.log-in {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+
+    .to-log-in {
+        text-decoration: none;
+        color: $color-white;
+        font-weight: 1000;
+    }
 }

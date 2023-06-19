@@ -100,17 +100,18 @@
                 
             }
         }
+        .google-logo {
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            img  {
+                width: 4rem;
+            }
+        }
     }
 }
 
-.log-in {
-    font-size: 1.5rem;
-    margin-top: 1rem;
 
-    .to-log-in {
-        text-decoration: none;
-        color: $color-white;
-        font-weight: 1000;
-    }
-}
 
